@@ -72,5 +72,14 @@ import sys
 print(sys.path[0])
 ```
 
-Now it is **CRUCIAL** to understand that when we do `import etl_control` module in `main.py`, Python only cares the directory of `main.py` (a current directory of a running file) and not the working directoy nor the directory of `etl_control.py`
+Now, it is **CRUCIAL** to understand that when we do `import etl_control` module in `main.py`, Python only cares the directory of `main.py` (a current directory of a running file) and not the working directoy nor the directory of `etl_control.py`
+
+## Before we move to a real example lets clarify import approaches
+In python 3, we have absolute import and relative import 
+
+## Ok now lets focus on real examples in this repo (by using absolute import)
+Let's considering following scenarios:
+1. We run `packACaller.py` directly and it imports `a1.py` and `a2.py` modules from the same directory
+2. Run `outsidecaller.py` which imports `a1` and `a2` 
+3. We want to run `outsidecaller.py` which imports `intermediatecaller.py` and the later also imports `sa1.py`. However, we want to be flexible and sometimes, we want to run `intermediatecaller.py` as well.
 
