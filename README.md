@@ -20,8 +20,7 @@ when you want to use them again, you can just import them. No CTRL+C and
 CTRL+V.
 4. For fun :)
 
-## Hang on.. What's module and package and what's the difference 
-between them?
+## Hang on.. What's module and package and what's the difference between them?
 
 Great, if you have these questions that means you are critically reading 
 this repo. Well done lad! 
@@ -33,6 +32,6 @@ Ok, now if we want to try out these terminologies, this is when fun get
 started.
 
 Python 2 to 3.3 may not be clever enough to automatically detect a 
-folder as a package. Therefore you need an empty __init__.py in the 
+folder as a package. Therefore you need an empty '''__init__.py''' in the 
 folder to tell Python interpreter that this is a package.
 
