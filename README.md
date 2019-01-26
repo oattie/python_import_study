@@ -41,7 +41,7 @@ projects
     -> etl_control.py
 ```
 
-This means you explicitly want Python to interpret this etl folder as a package which contains etl_control module.
+This means you explicitly want Python to interpret this etl folder as a package which contains `etl_control` module.
 
 ## Things're changed a bit for Python 3.3+
 We no longer need to put `__init__.py` in a folder when creating a package because of [implicit namespace packages](https://www.python.org/dev/peps/pep-0420/). Hurayyyyyyyyyyy!!!
@@ -72,5 +72,5 @@ import sys
 print(sys.path[0])
 ```
 
-Now it is **CRUCIAL** to understand that when we import `import etl_control` module in `main.py`, Python care only the directory of `main.py` and not the working directoy nor the directory of `etl_control.py`
+Now it is **CRUCIAL** to understand that when we do `import etl_control` module in `main.py`, Python only cares the directory of `main.py` (a current directory of a running file) and not the working directoy nor the directory of `etl_control.py`
 
