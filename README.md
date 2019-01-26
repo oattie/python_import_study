@@ -32,6 +32,6 @@ Ok, now if we want to try out these terminologies, this is when fun get
 started.
 
 Python 2 to 3.3 may not be clever enough to automatically detect a 
-folder as a package. Therefore you need an empty '__init__.py' in the 
+folder as a package. Therefore you need an empty `__init__.py` in the 
 folder to tell Python interpreter that this is a package.
 
