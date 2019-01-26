@@ -50,7 +50,7 @@ We no longer need to put `__init__.py` in a folder when creating a package becau
 Python will do following steps when importing a module/package:
 1. It puts built-in modules in a search path ( For example time, sys etc....). There are a list of built-in modules defined which can be found by `sys.builtin_module_names`
 2. It finds a package (folder) and a file with the same name of import and puts them in the search path.
-3. It putc other Python standard libraries or packages in the search path
+3. It puts other Python standard libraries or packages in the search path
 
 For example, considering the following structure of a Python project:
 
