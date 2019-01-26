@@ -47,7 +47,30 @@ This means you explicitly want Python to interpret this etl folder as a package 
 We no longer need to put `__init__.py` in a folder when creating a package because of [implicit namespace packages](https://www.python.org/dev/peps/pep-0420/). Hurayyyyyyyyyyy!!!
 
 ## But what does Python do when searching a module/package really?
-Python wills do following steps when you import a module/package:
+Python will do following steps when importing a module/package:
 1. It puts built-in modules in a search path ( For example time, sys etc....). There are a list of built-in modules defined which can be found by `sys.builtin_module_names`
 2. It finds a package (folder) and a file with the same name of import and puts them in the search path.
 3. It put other Python standard libraries or packages in the search path
+
+For example, considering the following structure of a Python project:
+
+```
+projects
+  main.py
+  -> etl
+    -> __init__.py
+    -> etl_control.py
+```
+
+Let's assume that we want to run `main.py` directly and inside `main.py`, it imports etl_control module. 
+The Python interpreter will search for built-in packages and put them in a search path, then put the directory of `main.py` in the search path and then put other Python standard libraries/packages into the search path.
+
+So, when you do run the following code, you will see that the `sys.path[0]` will show you the `projects` folder which is the current directory of `main.py`
+
+```
+import sys
+print(sys.path[0])
+```
+
+Now it is **CRUCIAL** to understand that when we import `import etl_control` module in `main.py`, Python care only the directory of `main.py` and not the working directoy nor the directory of `etl_control.py`
+
