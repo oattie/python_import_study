@@ -2,7 +2,6 @@
 
 Importing modules and packages are quite confusing as they have 
 different ways of imporing in Python 2 and 3
-
 This study will cover only Python 3 contents but from time to time 
 Python 2 will be mentioned.
 
@@ -21,10 +20,10 @@ per class. And therefore, you can end of with numerous of **modules**.
 
 Great, if you have these questions that means you are critically reading 
 this repo. Well done lad! 
-
+```
 A module: It is a file, essentially `<<script>>.py`
 A package: A folder which contains one or more modules
-
+```
 Ok, now if we want to try out these terminologies, this is when fun get 
 started.
 
