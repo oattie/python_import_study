@@ -43,3 +43,5 @@ projects
 
 This means you explicitly want Python to interpret this etl folder as a package which contains etl_control module.
 
+## Things change a bit for Python 3.3+
+We no longer need to put `__init__.py` in a folder when creating a package because of [implicit namespace packages](https://www.python.org/dev/peps/pep-0420/). Hurayyyyyyyyyyy!!!
