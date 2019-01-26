@@ -22,6 +22,7 @@ Great, if you have these questions that means you are critically reading
 this repo. Well done lad! 
 
 A module: It is a file, essentially `<<script>>.py`
+
 A package: A folder which contains one or more modules
 
 Ok, now if we want to try out these terminologies, this is when the fun get 
