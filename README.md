@@ -48,7 +48,7 @@ We no longer need to put `__init__.py` in a folder when creating a package becau
 
 ## But what does Python do when searching a module/package really?
 Python will do following steps when importing a module/package:
-1. It puts built-in modules in a search path ( For example time, sys etc....). There are a list of built-in modules defined which can be found by `sys.builtin_module_names`
+1. It puts built-in modules in a search path (For example time, sys etc....). There are a list of built-in modules defined which can be found by `sys.builtin_module_names`
 2. It finds a package (folder) and a file with the same name of import and puts them in the search path.
 3. It puts other Python standard libraries or packages in the search path
 
@@ -77,9 +77,24 @@ Now, it is **CRUCIAL** to understand that when we do `import etl_control` module
 ## Before we move to a real example lets clarify import approaches
 In python 3, we have absolute import and relative import 
 
+#### Absolute import
+It depends on the location of the **directory** of the **current file** that is being run. 
+
+For example, if you run `outsidecaller.py` the root directory would be `projects/`. So if you want to import `a1` module then you can just type `from packA import a1`.
+
+if you run `packACaller.py` which imports `sa1` module then the root which is added the Python search path would be `projects/packA`.
+So, the absolute import is really to specify the path from the current root that a file is being run.
+
+#### Relative import
+We have two types of the relative import; explicit relative import and implicit relative import. You can forget about the second type in Python 3 because it is not supported.
+
+To do an explicit relative import, the origin of the root starts from a file that is being run. The parent directory can be replace by `.`
+
+
+
 ## Ok now lets focus on real examples in this repo (by using absolute import)
 Let's considering following scenarios:
 1. We run `packACaller.py` directly and it imports `a1.py` and `a2.py` modules from the same directory
 2. Run `outsidecaller.py` which imports `a1` and `a2` 
-3. We want to run `outsidecaller.py` which imports `intermediatecaller.py` and the later also imports `sa1.py`. However, we want to be flexible and sometimes, we want to run `intermediatecaller.py` as well.
+3. We want to run `outsidecaller.py` which imports `intermediatecaller.py` and the later imports `sa1.py`. However, we want to be flexible and sometimes, we want to run `intermediatecaller.py` as well.
 
